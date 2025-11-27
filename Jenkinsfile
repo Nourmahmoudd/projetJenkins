@@ -12,21 +12,21 @@ pipeline {
         stage('Compilation') {
             steps {
                 echo '🔨 Compilation du projet...'
-                bat 'mvn clean compile'
+                sh 'mvn clean compile'
             }
         }
         
         stage('Tests') {
             steps {
                 echo '🧪 Exécution des tests...'
-                bat 'mvn test'
+                sh 'mvn test'
             }
         }
         
         stage('Package') {
             steps {
                 echo '📦 Création du JAR...'
-                bat 'mvn package -DskipTests'
+                sh 'mvn package -DskipTests'
             }
         }
     }
